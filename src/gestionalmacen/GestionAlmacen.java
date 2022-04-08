@@ -10,7 +10,7 @@ public class GestionAlmacen {
         System.out.println("Hola soy jonataN");
         System.out.println("Hola soy jonataN2");
         System.out.println("Hola soy Oliver pipipi");
-                //Holaasaaaa
+                
     }
     
 }
