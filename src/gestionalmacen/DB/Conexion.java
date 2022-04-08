@@ -8,9 +8,9 @@ import javax.swing.JOptionPane;
 public class Conexion {
 
     private static Connection conn = null;
-    private static String login = "Jonatan_Pacora";
-    private static String clave = "12345";
-    private static String url = "jdbbc:oracle:thin@localhost:1521:xe";
+    private static String login = "JONA";
+    private static String clave = "123";
+    private static String url = "jdbc:oracle:thin:@localhost:1521:XE";
 
     public static Connection getConnection() {
         try {
@@ -42,6 +42,11 @@ public class Conexion {
             System.out.println("Error al desconectar" + " " + e.getMessage());
         }
 
+    }
+    
+    public static void main(String[] args) {
+        Conexion cnn= new Conexion();
+        cnn.getConnection();
     }
 
 }
