@@ -8,7 +8,7 @@ public class GestionAlmacen {
      */
     public static void main(String[] args) {
         System.out.println("Hola soy jonataN");
-        System.out.println("Hola soy Alex");
+        
        
     }
     
