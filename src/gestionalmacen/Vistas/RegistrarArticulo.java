@@ -4,6 +4,9 @@
  */
 package gestionalmacen.Vistas;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ALEX
@@ -45,7 +48,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         LabelAño = new javax.swing.JLabel();
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        GuardarBoton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 450));
@@ -210,13 +213,13 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         LabelFormularioRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelFormularioRegistro.setText("FORMULARIO DE REGISTRO");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Guardar.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/GuardarPresionado.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        GuardarBoton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Guardar.png"))); // NOI18N
+        GuardarBoton.setBorderPainted(false);
+        GuardarBoton.setContentAreaFilled(false);
+        GuardarBoton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/GuardarPresionado.png"))); // NOI18N
+        GuardarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                GuardarBotonActionPerformed(evt);
             }
         });
 
@@ -234,7 +237,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(PanelLayout.createSequentialGroup()
                 .addGap(254, 254, 254)
-                .addComponent(jButton1)
+                .addComponent(GuardarBoton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelLayout.setVerticalGroup(
@@ -246,7 +249,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(GuardarBoton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -274,9 +277,14 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboDiaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void GuardarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarBotonActionPerformed
+        if("".equals(CampoNombreArticulo.getText())){
+            JOptionPane.showMessageDialog(null, "No ha colocado ningun nombre", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Se ha guardado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_GuardarBotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -325,6 +333,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> ComboDia;
     private javax.swing.JComboBox<String> ComboMes;
     private javax.swing.JPanel Footer;
+    private javax.swing.JButton GuardarBoton;
     private javax.swing.JPanel Head;
     private javax.swing.JLabel LabelArticulo;
     private javax.swing.JLabel LabelAño;
@@ -336,6 +345,5 @@ public class RegistrarArticulo extends javax.swing.JFrame {
     private javax.swing.JLabel LabelRegistrarArticulo;
     private javax.swing.JLabel LaberDia;
     private javax.swing.JPanel Panel;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

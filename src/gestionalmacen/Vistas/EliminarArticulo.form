@@ -446,12 +446,12 @@
         <Component class="javax.swing.JButton" name="BotonGuardar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/gestionalmacen/Vistas/iconos/Guardar.png"/>
+              <Image iconType="3" name="/gestionalmacen/Vistas/iconos/Eliminar.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/gestionalmacen/Vistas/iconos/GuardarPresionado.png"/>
+              <Image iconType="3" name="/gestionalmacen/Vistas/iconos/EliminarPresionado.png"/>
             </Property>
           </Properties>
           <Events>

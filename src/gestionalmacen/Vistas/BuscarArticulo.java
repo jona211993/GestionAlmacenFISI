@@ -28,7 +28,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
 
         Panel = new javax.swing.JPanel();
         Head = new javax.swing.JPanel();
-        LabelRegistrarArticulo = new javax.swing.JLabel();
+        LabelBuscarArticulo = new javax.swing.JLabel();
         Body = new javax.swing.JPanel();
         LabelArticulo = new javax.swing.JLabel();
         LabelNombreArticulo = new javax.swing.JLabel();
@@ -36,8 +36,8 @@ public class BuscarArticulo extends javax.swing.JFrame {
         LabelCodigoArticulo = new javax.swing.JLabel();
         CampoCodigoArticulo = new javax.swing.JTextField();
         Footer = new javax.swing.JPanel();
-        LabelFormularioRegistro = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        LabelBuscarCoNo = new javax.swing.JLabel();
+        BotonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 450));
@@ -48,9 +48,9 @@ public class BuscarArticulo extends javax.swing.JFrame {
 
         Head.setBackground(new java.awt.Color(22, 108, 169));
 
-        LabelRegistrarArticulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        LabelRegistrarArticulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        LabelRegistrarArticulo.setText("Buscar Articulo");
+        LabelBuscarArticulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        LabelBuscarArticulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LabelBuscarArticulo.setText("Buscar Articulo");
 
         javax.swing.GroupLayout HeadLayout = new javax.swing.GroupLayout(Head);
         Head.setLayout(HeadLayout);
@@ -58,13 +58,13 @@ public class BuscarArticulo extends javax.swing.JFrame {
             HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelRegistrarArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                .addComponent(LabelBuscarArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
                 .addGap(96, 96, 96))
         );
         HeadLayout.setVerticalGroup(
             HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadLayout.createSequentialGroup()
-                .addComponent(LabelRegistrarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LabelBuscarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -129,18 +129,18 @@ public class BuscarArticulo extends javax.swing.JFrame {
             .addGap(0, 33, Short.MAX_VALUE)
         );
 
-        LabelFormularioRegistro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        LabelFormularioRegistro.setForeground(new java.awt.Color(255, 255, 255));
-        LabelFormularioRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelFormularioRegistro.setText("Buscar por codigo y nombre");
+        LabelBuscarCoNo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        LabelBuscarCoNo.setForeground(new java.awt.Color(255, 255, 255));
+        LabelBuscarCoNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelBuscarCoNo.setText("Buscar por codigo y nombre");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Buscar.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/BuscarPresionado.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Buscar.png"))); // NOI18N
+        BotonBuscar.setBorderPainted(false);
+        BotonBuscar.setContentAreaFilled(false);
+        BotonBuscar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/BuscarPresionado.png"))); // NOI18N
+        BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotonBuscarActionPerformed(evt);
             }
         });
 
@@ -154,11 +154,11 @@ public class BuscarArticulo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(LabelBuscarCoNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(BotonBuscar)
                 .addGap(257, 257, 257))
         );
         PanelLayout.setVerticalGroup(
@@ -166,11 +166,11 @@ public class BuscarArticulo extends javax.swing.JFrame {
             .addGroup(PanelLayout.createSequentialGroup()
                 .addComponent(Head, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LabelBuscarCoNo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(jButton1)
+                .addComponent(BotonBuscar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -190,9 +190,9 @@ public class BuscarArticulo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BotonBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,16 +238,16 @@ public class BuscarArticulo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Body;
+    private javax.swing.JButton BotonBuscar;
     private javax.swing.JTextField CampoCodigoArticulo;
     private javax.swing.JTextField CampoNombreArticulo;
     private javax.swing.JPanel Footer;
     private javax.swing.JPanel Head;
     private javax.swing.JLabel LabelArticulo;
+    private javax.swing.JLabel LabelBuscarArticulo;
+    private javax.swing.JLabel LabelBuscarCoNo;
     private javax.swing.JLabel LabelCodigoArticulo;
-    private javax.swing.JLabel LabelFormularioRegistro;
     private javax.swing.JLabel LabelNombreArticulo;
-    private javax.swing.JLabel LabelRegistrarArticulo;
     private javax.swing.JPanel Panel;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,8 @@
  */
 package gestionalmacen.Vistas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ALEX
@@ -212,10 +214,10 @@ public class EliminarArticulo extends javax.swing.JFrame {
         LabelFormularioRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelFormularioRegistro.setText("FORMULARIO DE REGISTRO");
 
-        BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Guardar.png"))); // NOI18N
+        BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Eliminar.png"))); // NOI18N
         BotonGuardar.setBorderPainted(false);
         BotonGuardar.setContentAreaFilled(false);
-        BotonGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/GuardarPresionado.png"))); // NOI18N
+        BotonGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/EliminarPresionado.png"))); // NOI18N
         BotonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonGuardarActionPerformed(evt);
@@ -286,7 +288,8 @@ public class EliminarArticulo extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboDiaActionPerformed
 
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_BotonGuardarActionPerformed
 
     /**

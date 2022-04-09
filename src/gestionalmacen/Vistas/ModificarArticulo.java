@@ -4,6 +4,8 @@
  */
 package gestionalmacen.Vistas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ALEX
@@ -41,7 +43,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
         LabelMes = new javax.swing.JLabel();
         ComboAño = new javax.swing.JComboBox<>();
         LabelAño = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        CampoNombreArticulo = new javax.swing.JTextField();
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
         BotonVolver = new javax.swing.JButton();
@@ -117,7 +119,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
         LabelAño.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelAño.setText("Año:");
 
-        jTextField1.setText("*****************************************************");
+        CampoNombreArticulo.setText("*****************************************************");
 
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
@@ -146,7 +148,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
                                 .addComponent(LabelAño, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ComboAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(LabelArticulo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -158,7 +160,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNombreArticulo)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCantidad)
@@ -202,6 +204,11 @@ public class ModificarArticulo extends javax.swing.JFrame {
         BotonGuardar.setBorderPainted(false);
         BotonGuardar.setContentAreaFilled(false);
         BotonGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/GuardarPresionado.png"))); // NOI18N
+        BotonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
@@ -257,6 +264,11 @@ public class ModificarArticulo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboDiaActionPerformed
 
+    private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
+        JOptionPane.showMessageDialog(null, "Se ha guardado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+        
+    }//GEN-LAST:event_BotonGuardarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -303,6 +315,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
     private javax.swing.JPanel Body;
     private javax.swing.JButton BotonGuardar;
     private javax.swing.JButton BotonVolver;
+    private javax.swing.JTextField CampoNombreArticulo;
     private javax.swing.JComboBox<String> ComboAño;
     private javax.swing.JComboBox<String> ComboBoxCantidad;
     private javax.swing.JComboBox<String> ComboDia;
@@ -319,6 +332,5 @@ public class ModificarArticulo extends javax.swing.JFrame {
     private javax.swing.JLabel LabelNombreArticulo;
     private javax.swing.JLabel LaberDia;
     private javax.swing.JPanel Panel;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
