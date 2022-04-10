@@ -10,12 +10,11 @@ package gestionalmacen.Vistas;
  */
 public class BuscarArticulo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewJFrame
-     */
+    
     public BuscarArticulo() {
         initComponents();
         setVisible(true);
+        
     }
 
     /**
@@ -206,7 +205,15 @@ public class BuscarArticulo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
-        // TODO add your handling code here:
+        if(GestorArticulos.opcionArticulo == 1){
+            ModificarArticulo form = new ModificarArticulo();
+            this.dispose();
+        }else if(GestorArticulos.opcionArticulo == 2){
+            EliminarArticulo form = new EliminarArticulo();
+            this.dispose();
+            
+        }
+        
     }//GEN-LAST:event_BotonBuscarActionPerformed
 
     private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed

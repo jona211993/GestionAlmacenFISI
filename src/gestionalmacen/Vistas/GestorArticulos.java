@@ -13,9 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class GestorArticulos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewJFrame
-     */
+    public static int opcionArticulo = -1;
     public GestorArticulos() {
         initComponents();
         setVisible(true);
@@ -35,11 +33,12 @@ public class GestorArticulos extends javax.swing.JFrame {
         LabelRegistrarArticulo = new javax.swing.JLabel();
         BotonCerrar = new javax.swing.JButton();
         Body = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Tabla = new javax.swing.JTable();
         BotonRegistrar = new javax.swing.JButton();
         BotonModificar = new javax.swing.JButton();
         BotonEliminar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
 
@@ -88,68 +87,84 @@ public class GestorArticulos extends javax.swing.JFrame {
 
         Body.setBackground(new java.awt.Color(226, 162, 43));
 
-        Tabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Código", "Articulos", "Cantidad"
-            }
-        ));
-        jScrollPane1.setViewportView(Tabla);
-
-        BotonRegistrar.setText("Registrar");
+        BotonRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Registrar.png"))); // NOI18N
+        BotonRegistrar.setBorderPainted(false);
+        BotonRegistrar.setContentAreaFilled(false);
+        BotonRegistrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/RegistrarPresionado.png"))); // NOI18N
         BotonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarActionPerformed(evt);
             }
         });
 
-        BotonModificar.setText("Modificar");
+        BotonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Modificar.png"))); // NOI18N
+        BotonModificar.setBorderPainted(false);
+        BotonModificar.setContentAreaFilled(false);
+        BotonModificar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/ModificarPresionado.png"))); // NOI18N
         BotonModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonModificarActionPerformed(evt);
             }
         });
 
-        BotonEliminar.setText("Eliminar");
+        BotonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Eliminar.png"))); // NOI18N
+        BotonEliminar.setBorderPainted(false);
+        BotonEliminar.setContentAreaFilled(false);
+        BotonEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/EliminarPresionado.png"))); // NOI18N
         BotonEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonEliminarActionPerformed(evt);
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(240, 218, 113));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel1.setText("Modificar Artículo");
+
+        jLabel2.setBackground(new java.awt.Color(240, 218, 113));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel2.setText("Registrar Artículo");
+
+        jLabel3.setBackground(new java.awt.Color(240, 218, 113));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel3.setText("Eliminar Artículo");
+
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
         BodyLayout.setHorizontalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BotonModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(90, 90, 90))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyLayout.createSequentialGroup()
+                        .addComponent(BotonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 75, 75)
+                        .addComponent(BotonModificar)
+                        .addGap(71, 71, 71)
+                        .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel1)
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel3)
+                        .addGap(40, 40, 40))))
         );
         BodyLayout.setVerticalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(BotonRegistrar)
-                .addGap(18, 18, 18)
-                .addComponent(BotonModificar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotonEliminar)
-                .addGap(39, 39, 39))
-            .addGroup(BodyLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonModificar)
+                    .addComponent(BotonRegistrar)
+                    .addComponent(BotonEliminar))
+                .addGap(42, 42, 42)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         Footer.setBackground(new java.awt.Color(5, 9, 25));
@@ -191,7 +206,7 @@ public class GestorArticulos extends javax.swing.JFrame {
                 .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -220,12 +235,14 @@ public class GestorArticulos extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
     private void BotonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarActionPerformed
-        ModificarArticulo form = new ModificarArticulo(); //Ingresamos al formulario del cliente
+        BuscarArticulo form = new BuscarArticulo();
+        opcionArticulo = 1;
         this.dispose();
     }//GEN-LAST:event_BotonModificarActionPerformed
 
     private void BotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarActionPerformed
-        EliminarArticulo form = new EliminarArticulo();
+        BuscarArticulo form = new BuscarArticulo();
+        opcionArticulo = 2;
         this.dispose();
     }//GEN-LAST:event_BotonEliminarActionPerformed
 
@@ -282,7 +299,8 @@ public class GestorArticulos extends javax.swing.JFrame {
     private javax.swing.JLabel LabelFormularioRegistro;
     private javax.swing.JLabel LabelRegistrarArticulo;
     private javax.swing.JPanel Panel;
-    private javax.swing.JTable Tabla;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
