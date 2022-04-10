@@ -37,8 +37,8 @@ public class BuscarArticulo extends javax.swing.JFrame {
         CampoCodigoArticulo = new javax.swing.JTextField();
         Footer = new javax.swing.JPanel();
         LabelBuscarCoNo = new javax.swing.JLabel();
-        BotonBuscar = new javax.swing.JButton();
         BotonAtras = new javax.swing.JButton();
+        BotonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 450));
@@ -135,6 +135,15 @@ public class BuscarArticulo extends javax.swing.JFrame {
         LabelBuscarCoNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelBuscarCoNo.setText("Buscar por codigo y nombre");
 
+        BotonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Atras.png"))); // NOI18N
+        BotonAtras.setBorderPainted(false);
+        BotonAtras.setContentAreaFilled(false);
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAtrasActionPerformed(evt);
+            }
+        });
+
         BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Buscar.png"))); // NOI18N
         BotonBuscar.setBorderPainted(false);
         BotonBuscar.setContentAreaFilled(false);
@@ -142,15 +151,6 @@ public class BuscarArticulo extends javax.swing.JFrame {
         BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonBuscarActionPerformed(evt);
-            }
-        });
-
-        BotonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Atras.png"))); // NOI18N
-        BotonAtras.setBorderPainted(false);
-        BotonAtras.setContentAreaFilled(false);
-        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAtrasActionPerformed(evt);
             }
         });
 
@@ -167,9 +167,9 @@ public class BuscarArticulo extends javax.swing.JFrame {
                     .addComponent(LabelBuscarCoNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(164, 164, 164)
+                .addGap(168, 168, 168)
                 .addComponent(BotonAtras)
-                .addGap(111, 111, 111)
+                .addGap(99, 99, 99)
                 .addComponent(BotonBuscar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -182,9 +182,9 @@ public class BuscarArticulo extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonBuscar)
-                    .addComponent(BotonAtras))
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BotonAtras)
+                    .addComponent(BotonBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
