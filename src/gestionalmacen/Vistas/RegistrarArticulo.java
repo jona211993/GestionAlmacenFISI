@@ -18,6 +18,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
      */
     public RegistrarArticulo() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -67,7 +68,6 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         BotonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Salir.png"))); // NOI18N
         BotonCerrar.setBorderPainted(false);
         BotonCerrar.setContentAreaFilled(false);
-        BotonCerrar.setOpaque(false);
         BotonCerrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/SalirPresionado.png"))); // NOI18N
         BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,7 +270,8 @@ public class RegistrarArticulo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
-        // TODO add your handling code here:
+        GestorArticulos form = new GestorArticulos(); //Ingresamos al formulario del cliente
+        this.dispose();
     }//GEN-LAST:event_BotonCerrarActionPerformed
 
     private void ComboDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDiaActionPerformed

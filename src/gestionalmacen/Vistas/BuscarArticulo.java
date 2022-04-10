@@ -15,6 +15,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
      */
     public BuscarArticulo() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -38,6 +39,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
         Footer = new javax.swing.JPanel();
         LabelBuscarCoNo = new javax.swing.JLabel();
         BotonBuscar = new javax.swing.JButton();
+        BotonAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 450));
@@ -144,6 +146,15 @@ public class BuscarArticulo extends javax.swing.JFrame {
             }
         });
 
+        BotonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Atras.png"))); // NOI18N
+        BotonAtras.setBorderPainted(false);
+        BotonAtras.setContentAreaFilled(false);
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAtrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
@@ -156,10 +167,12 @@ public class BuscarArticulo extends javax.swing.JFrame {
                     .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LabelBuscarCoNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelLayout.createSequentialGroup()
+                .addGap(164, 164, 164)
+                .addComponent(BotonAtras)
+                .addGap(111, 111, 111)
                 .addComponent(BotonBuscar)
-                .addGap(257, 257, 257))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +183,9 @@ public class BuscarArticulo extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(BotonBuscar)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonBuscar)
+                    .addComponent(BotonAtras))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -193,6 +208,11 @@ public class BuscarArticulo extends javax.swing.JFrame {
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotonBuscarActionPerformed
+
+    private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
+        GestorArticulos form = new GestorArticulos(); //Ingresamos al formulario del cliente
+        this.dispose();
+    }//GEN-LAST:event_BotonAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,6 +258,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Body;
+    private javax.swing.JButton BotonAtras;
     private javax.swing.JButton BotonBuscar;
     private javax.swing.JTextField CampoCodigoArticulo;
     private javax.swing.JTextField CampoNombreArticulo;

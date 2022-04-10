@@ -17,6 +17,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
      */
     public ModificarArticulo() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -199,6 +200,11 @@ public class ModificarArticulo extends javax.swing.JFrame {
         BotonVolver.setBorderPainted(false);
         BotonVolver.setContentAreaFilled(false);
         BotonVolver.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/AtrasPresionado.png"))); // NOI18N
+        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolverActionPerformed(evt);
+            }
+        });
 
         BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Guardar.png"))); // NOI18N
         BotonGuardar.setBorderPainted(false);
@@ -238,9 +244,9 @@ public class ModificarArticulo extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonVolver)
-                    .addComponent(BotonGuardar))
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonVolver, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BotonGuardar, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -268,6 +274,11 @@ public class ModificarArticulo extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Se ha guardado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_BotonGuardarActionPerformed
+
+    private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
+        GestorArticulos form = new GestorArticulos(); //Ingresamos al formulario del cliente
+        this.dispose();
+    }//GEN-LAST:event_BotonVolverActionPerformed
 
     /**
      * @param args the command line arguments

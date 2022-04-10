@@ -17,6 +17,7 @@ public class EliminarArticulo extends javax.swing.JFrame {
      */
     public EliminarArticulo() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -31,20 +32,21 @@ public class EliminarArticulo extends javax.swing.JFrame {
         Panel = new javax.swing.JPanel();
         Head = new javax.swing.JPanel();
         LabelEliminarArticulo = new javax.swing.JLabel();
-        BotonCerrar = new javax.swing.JButton();
         Body = new javax.swing.JPanel();
         LabelArticulo = new javax.swing.JLabel();
         LabelNombreArticulo = new javax.swing.JLabel();
         LabelCantidad = new javax.swing.JLabel();
-        ComboBoxCantidad = new javax.swing.JComboBox<>();
         LabelFechaRegistro = new javax.swing.JLabel();
         LaberDia = new javax.swing.JLabel();
-        ComboDia = new javax.swing.JComboBox<>();
-        ComboMes = new javax.swing.JComboBox<>();
         LabelMes = new javax.swing.JLabel();
-        ComboAño = new javax.swing.JComboBox<>();
         LabelAño = new javax.swing.JLabel();
         LabelNombreRespuesta = new javax.swing.JLabel();
+        LabelRespuestaCantidad = new javax.swing.JLabel();
+        LabelRespuestaDia = new javax.swing.JLabel();
+        LabelRespuestaMes = new javax.swing.JLabel();
+        LabelRespuestaAño = new javax.swing.JLabel();
+        LabelNombreArticulo1 = new javax.swing.JLabel();
+        LabelNombreRespuesta1 = new javax.swing.JLabel();
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
         BotonGuardar = new javax.swing.JButton();
@@ -63,16 +65,6 @@ public class EliminarArticulo extends javax.swing.JFrame {
         LabelEliminarArticulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LabelEliminarArticulo.setText("Eliminar Articulo");
 
-        BotonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Salir.png"))); // NOI18N
-        BotonCerrar.setBorderPainted(false);
-        BotonCerrar.setContentAreaFilled(false);
-        BotonCerrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/SalirPresionado.png"))); // NOI18N
-        BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonCerrarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout HeadLayout = new javax.swing.GroupLayout(Head);
         Head.setLayout(HeadLayout);
         HeadLayout.setHorizontalGroup(
@@ -80,16 +72,13 @@ public class EliminarArticulo extends javax.swing.JFrame {
             .addGroup(HeadLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LabelEliminarArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(96, 96, 96))
         );
         HeadLayout.setVerticalGroup(
             HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadLayout.createSequentialGroup()
-                .addGroup(HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LabelEliminarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(LabelEliminarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -105,9 +94,6 @@ public class EliminarArticulo extends javax.swing.JFrame {
         LabelCantidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCantidad.setText("Cantidad");
 
-        ComboBoxCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", " " }));
-        ComboBoxCantidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
         LabelFechaRegistro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         LabelFechaRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelFechaRegistro.setText("Fecha de Registro");
@@ -116,20 +102,9 @@ public class EliminarArticulo extends javax.swing.JFrame {
         LaberDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LaberDia.setText("Día:");
 
-        ComboDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        ComboDia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboDiaActionPerformed(evt);
-            }
-        });
-
-        ComboMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", " " }));
-
         LabelMes.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         LabelMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelMes.setText("Mes:");
-
-        ComboAño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
 
         LabelAño.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         LabelAño.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -137,6 +112,20 @@ public class EliminarArticulo extends javax.swing.JFrame {
 
         LabelNombreRespuesta.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         LabelNombreRespuesta.setText("**************************************************");
+
+        LabelRespuestaCantidad.setText("XXXXX");
+
+        LabelRespuestaDia.setText("XX");
+
+        LabelRespuestaMes.setText("XX");
+
+        LabelRespuestaAño.setText("XXXX");
+
+        LabelNombreArticulo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelNombreArticulo1.setText("Código de Artículo");
+
+        LabelNombreRespuesta1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        LabelNombreRespuesta1.setText("**************************************************");
 
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
@@ -146,29 +135,33 @@ public class EliminarArticulo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BodyLayout.createSequentialGroup()
-                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(LabelFechaRegistro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelNombreArticulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelCantidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(BodyLayout.createSequentialGroup()
-                                .addComponent(LaberDia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComboDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(LabelMes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComboMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelAño, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComboAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(LabelNombreRespuesta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(111, Short.MAX_VALUE))
+                        .addComponent(LabelNombreArticulo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(BodyLayout.createSequentialGroup()
-                        .addComponent(LabelArticulo)
+                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(BodyLayout.createSequentialGroup()
+                                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(LabelFechaRegistro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LabelNombreArticulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LabelCantidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(37, 37, 37)
+                                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LabelRespuestaCantidad)
+                                    .addComponent(LabelNombreRespuesta1)
+                                    .addGroup(BodyLayout.createSequentialGroup()
+                                        .addComponent(LaberDia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(LabelRespuestaDia)
+                                        .addGap(20, 20, 20)
+                                        .addComponent(LabelMes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(1, 1, 1)
+                                        .addComponent(LabelRespuestaMes)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(LabelAño, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(LabelRespuestaAño))
+                                    .addComponent(LabelNombreRespuesta)))
+                            .addComponent(LabelArticulo))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         BodyLayout.setVerticalGroup(
@@ -176,24 +169,28 @@ public class EliminarArticulo extends javax.swing.JFrame {
             .addGroup(BodyLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(LabelArticulo)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelNombreArticulo1)
+                    .addComponent(LabelNombreRespuesta))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNombreArticulo)
-                    .addComponent(LabelNombreRespuesta))
+                    .addComponent(LabelNombreRespuesta1))
                 .addGap(18, 18, 18)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCantidad)
-                    .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelRespuestaCantidad))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelFechaRegistro)
                     .addComponent(LaberDia)
-                    .addComponent(ComboDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelMes)
-                    .addComponent(ComboMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelAño)
-                    .addComponent(ComboAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 46, Short.MAX_VALUE))
+                    .addComponent(LabelRespuestaDia)
+                    .addComponent(LabelRespuestaMes)
+                    .addComponent(LabelRespuestaAño))
+                .addContainerGap())
         );
 
         Footer.setBackground(new java.awt.Color(5, 9, 25));
@@ -228,6 +225,11 @@ public class EliminarArticulo extends javax.swing.JFrame {
         BotonVolver.setBorderPainted(false);
         BotonVolver.setContentAreaFilled(false);
         BotonVolver.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/AtrasPresionado.png"))); // NOI18N
+        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
@@ -260,7 +262,7 @@ public class EliminarArticulo extends javax.swing.JFrame {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BotonVolver)
                     .addComponent(BotonGuardar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -279,18 +281,15 @@ public class EliminarArticulo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonCerrarActionPerformed
-
-    private void ComboDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboDiaActionPerformed
-
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
         JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_BotonGuardarActionPerformed
+
+    private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
+        GestorArticulos form = new GestorArticulos(); //Ingresamos al formulario del cliente
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -336,13 +335,8 @@ public class EliminarArticulo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Body;
-    private javax.swing.JButton BotonCerrar;
     private javax.swing.JButton BotonGuardar;
     private javax.swing.JButton BotonVolver;
-    private javax.swing.JComboBox<String> ComboAño;
-    private javax.swing.JComboBox<String> ComboBoxCantidad;
-    private javax.swing.JComboBox<String> ComboDia;
-    private javax.swing.JComboBox<String> ComboMes;
     private javax.swing.JPanel Footer;
     private javax.swing.JPanel Head;
     private javax.swing.JLabel LabelArticulo;
@@ -353,7 +347,13 @@ public class EliminarArticulo extends javax.swing.JFrame {
     private javax.swing.JLabel LabelFormularioRegistro;
     private javax.swing.JLabel LabelMes;
     private javax.swing.JLabel LabelNombreArticulo;
+    private javax.swing.JLabel LabelNombreArticulo1;
     private javax.swing.JLabel LabelNombreRespuesta;
+    private javax.swing.JLabel LabelNombreRespuesta1;
+    private javax.swing.JLabel LabelRespuestaAño;
+    private javax.swing.JLabel LabelRespuestaCantidad;
+    private javax.swing.JLabel LabelRespuestaDia;
+    private javax.swing.JLabel LabelRespuestaMes;
     private javax.swing.JLabel LaberDia;
     private javax.swing.JPanel Panel;
     // End of variables declaration//GEN-END:variables
