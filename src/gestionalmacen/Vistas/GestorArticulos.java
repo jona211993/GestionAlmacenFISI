@@ -36,9 +36,9 @@ public class GestorArticulos extends javax.swing.JFrame {
         BotonRegistrar = new javax.swing.JButton();
         BotonModificar = new javax.swing.JButton();
         BotonEliminar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        LabelModificar = new javax.swing.JLabel();
+        LabelRegistrar = new javax.swing.JLabel();
+        LabelEliminar = new javax.swing.JLabel();
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
 
@@ -116,17 +116,17 @@ public class GestorArticulos extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(240, 218, 113));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel1.setText("Modificar Artículo");
+        LabelModificar.setBackground(new java.awt.Color(240, 218, 113));
+        LabelModificar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        LabelModificar.setText("Modificar Artículo");
 
-        jLabel2.setBackground(new java.awt.Color(240, 218, 113));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel2.setText("Registrar Artículo");
+        LabelRegistrar.setBackground(new java.awt.Color(240, 218, 113));
+        LabelRegistrar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        LabelRegistrar.setText("Registrar Artículo");
 
-        jLabel3.setBackground(new java.awt.Color(240, 218, 113));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel3.setText("Eliminar Artículo");
+        LabelEliminar.setBackground(new java.awt.Color(240, 218, 113));
+        LabelEliminar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        LabelEliminar.setText("Eliminar Artículo");
 
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
@@ -143,11 +143,11 @@ public class GestorArticulos extends javax.swing.JFrame {
                         .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BodyLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(LabelRegistrar)
                         .addGap(53, 53, 53)
-                        .addComponent(jLabel1)
+                        .addComponent(LabelModificar)
                         .addGap(53, 53, 53)
-                        .addComponent(jLabel3)
+                        .addComponent(LabelEliminar)
                         .addGap(40, 40, 40))))
         );
         BodyLayout.setVerticalGroup(
@@ -160,9 +160,9 @@ public class GestorArticulos extends javax.swing.JFrame {
                     .addComponent(BotonEliminar))
                 .addGap(42, 42, 42)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3))
+                    .addComponent(LabelRegistrar)
+                    .addComponent(LabelModificar)
+                    .addComponent(LabelEliminar))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
@@ -225,7 +225,8 @@ public class GestorArticulos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
-        // TODO add your handling code here:
+       IniciarSesion form = new IniciarSesion();
+       this.dispose();
     }//GEN-LAST:event_BotonCerrarActionPerformed
 
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
@@ -295,11 +296,11 @@ public class GestorArticulos extends javax.swing.JFrame {
     private javax.swing.JButton BotonRegistrar;
     private javax.swing.JPanel Footer;
     private javax.swing.JPanel Head;
+    private javax.swing.JLabel LabelEliminar;
     private javax.swing.JLabel LabelFormularioRegistro;
+    private javax.swing.JLabel LabelModificar;
+    private javax.swing.JLabel LabelRegistrar;
     private javax.swing.JLabel LabelRegistrarArticulo;
     private javax.swing.JPanel Panel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

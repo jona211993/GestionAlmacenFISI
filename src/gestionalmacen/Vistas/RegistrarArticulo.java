@@ -47,8 +47,10 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         LabelCantidad = new javax.swing.JLabel();
         ComboBoxCantidad = new javax.swing.JComboBox<>();
         LabelFechaRegistro = new javax.swing.JLabel();
+
         Fecha_Capturada = new com.toedter.calendar.JDateChooser();
         label_codigoAsignado = new javax.swing.JLabel();
+
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
         GuardarBoton = new javax.swing.JButton();
@@ -120,6 +122,9 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         label_codigoAsignado.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         label_codigoAsignado.setForeground(new java.awt.Color(0, 102, 0));
 
+        LabelNombreArticulo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelNombreArticulo1.setText("Código de Artículo");
+
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
         BodyLayout.setHorizontalGroup(
@@ -127,6 +132,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
             .addGroup(BodyLayout.createSequentialGroup()
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BodyLayout.createSequentialGroup()
+
                         .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(BodyLayout.createSequentialGroup()
                                 .addContainerGap()
@@ -142,20 +148,25 @@ public class RegistrarArticulo extends javax.swing.JFrame {
                             .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Fecha_Capturada, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+
                     .addGroup(BodyLayout.createSequentialGroup()
+
                         .addGap(24, 24, 24)
                         .addComponent(LabelArticulo)
                         .addGap(53, 53, 53)
                         .addComponent(label_codigoAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(59, Short.MAX_VALUE))
+
         );
         BodyLayout.setVerticalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
+
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(LabelArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(label_codigoAsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNombreArticulo)
@@ -164,11 +175,13 @@ public class RegistrarArticulo extends javax.swing.JFrame {
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCantidad)
                     .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+
                 .addGap(30, 30, 30)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Fecha_Capturada, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelFechaRegistro))
                 .addContainerGap(47, Short.MAX_VALUE))
+
         );
 
         Footer.setBackground(new java.awt.Color(5, 9, 25));
@@ -328,6 +341,8 @@ public class RegistrarArticulo extends javax.swing.JFrame {
     private javax.swing.JPanel Body;
     private javax.swing.JButton BotonCerrar;
     private javax.swing.JTextField CampoNombreArticulo;
+
+
     private javax.swing.JComboBox<String> ComboBoxCantidad;
     private com.toedter.calendar.JDateChooser Fecha_Capturada;
     private javax.swing.JPanel Footer;
@@ -338,6 +353,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
     private javax.swing.JLabel LabelFechaRegistro;
     private javax.swing.JLabel LabelFormularioRegistro;
     private javax.swing.JLabel LabelNombreArticulo;
+    private javax.swing.JLabel LabelNombreArticulo1;
     private javax.swing.JLabel LabelRegistrarArticulo;
     private javax.swing.JPanel Panel;
     private javax.swing.JLabel label_codigoAsignado;
