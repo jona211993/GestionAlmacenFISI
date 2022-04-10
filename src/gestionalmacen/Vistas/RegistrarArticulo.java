@@ -4,6 +4,11 @@
  */
 package gestionalmacen.Vistas;
 
+import gestionalmacen.CapaEntidades.Articulo;
+import gestionalmacen.CapaNegocio.ArticuloCN;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -13,11 +18,12 @@ import javax.swing.JOptionPane;
  */
 public class RegistrarArticulo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewJFrame
-     */
+    
     public RegistrarArticulo() {
+                      
         initComponents();
+        ColocarCodigo();
+        this.setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -41,12 +47,8 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         LabelCantidad = new javax.swing.JLabel();
         ComboBoxCantidad = new javax.swing.JComboBox<>();
         LabelFechaRegistro = new javax.swing.JLabel();
-        LaberDia = new javax.swing.JLabel();
-        ComboDia = new javax.swing.JComboBox<>();
-        ComboMes = new javax.swing.JComboBox<>();
-        LabelMes = new javax.swing.JLabel();
-        ComboAño = new javax.swing.JComboBox<>();
-        LabelAño = new javax.swing.JLabel();
+        Fecha_Capturada = new com.toedter.calendar.JDateChooser();
+        label_codigoAsignado = new javax.swing.JLabel();
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
         GuardarBoton = new javax.swing.JButton();
@@ -54,8 +56,8 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(600, 450));
         setMinimumSize(new java.awt.Dimension(600, 450));
-        setUndecorated(true);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Panel.setBackground(new java.awt.Color(18, 48, 87));
 
@@ -81,7 +83,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
             HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelRegistrarArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                .addComponent(LabelRegistrarArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
@@ -97,102 +99,76 @@ public class RegistrarArticulo extends javax.swing.JFrame {
 
         Body.setBackground(new java.awt.Color(226, 162, 43));
 
-        LabelArticulo.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        LabelArticulo.setText("Artículo");
+        LabelArticulo.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        LabelArticulo.setText("Codigo_Artículo : ");
 
-        LabelNombreArticulo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelNombreArticulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LabelNombreArticulo.setText("Nombre de Artículo");
 
-        LabelCantidad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelCantidad.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LabelCantidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelCantidad.setText("Cantidad");
 
         ComboBoxCantidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", " " }));
         ComboBoxCantidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        LabelFechaRegistro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelFechaRegistro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LabelFechaRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelFechaRegistro.setText("Fecha de Registro");
 
-        LaberDia.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        LaberDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LaberDia.setText("Día:");
-
-        ComboDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        ComboDia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboDiaActionPerformed(evt);
-            }
-        });
-
-        ComboMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", " " }));
-
-        LabelMes.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        LabelMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelMes.setText("Mes:");
-
-        ComboAño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
-
-        LabelAño.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        LabelAño.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelAño.setText("Año:");
+        label_codigoAsignado.setBackground(new java.awt.Color(102, 51, 0));
+        label_codigoAsignado.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        label_codigoAsignado.setForeground(new java.awt.Color(0, 102, 0));
 
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
         BodyLayout.setHorizontalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BodyLayout.createSequentialGroup()
-                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(LabelFechaRegistro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelNombreArticulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LabelCantidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(BodyLayout.createSequentialGroup()
-                                .addComponent(LaberDia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComboDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(LabelMes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComboMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelAño, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComboAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(82, Short.MAX_VALUE))
+                                .addContainerGap()
+                                .addComponent(LabelCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(BodyLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(LabelFechaRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(BodyLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(LabelNombreArticulo)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fecha_Capturada, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(BodyLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
                         .addComponent(LabelArticulo)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(53, 53, 53)
+                        .addComponent(label_codigoAsignado, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         BodyLayout.setVerticalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
-                .addComponent(LabelArticulo)
-                .addGap(18, 18, 18)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LabelArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(label_codigoAsignado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNombreArticulo)
                     .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCantidad)
                     .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelFechaRegistro)
-                    .addComponent(LaberDia)
-                    .addComponent(ComboDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelMes)
-                    .addComponent(ComboMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelAño)
-                    .addComponent(ComboAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 46, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha_Capturada, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelFechaRegistro))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         Footer.setBackground(new java.awt.Color(5, 9, 25));
@@ -205,7 +181,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         );
         FooterLayout.setVerticalGroup(
             FooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 33, Short.MAX_VALUE)
+            .addGap(0, 55, Short.MAX_VALUE)
         );
 
         LabelFormularioRegistro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -230,60 +206,83 @@ public class RegistrarArticulo extends javax.swing.JFrame {
             .addComponent(Head, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Footer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(254, 254, 254)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(65, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(GuardarBoton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(226, 226, 226))
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
                 .addComponent(Head, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(43, 43, 43)
                 .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(26, 26, 26)
                 .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(GuardarBoton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(GuardarBoton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 543));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+        
+    public void ColocarCodigo(){
+    
+        ArticuloCN objeto_AN= new ArticuloCN();
+        int codigo_asignado= objeto_AN.Obtener_ID_NewArticulo();
+        this.label_codigoAsignado.setText(String.valueOf(codigo_asignado));
+      }
+    
+        public void LimpiarCampos()
+        {
+           this.ComboBoxCantidad.setSelectedIndex(0);
+           this.CampoNombreArticulo.setText("");
+           this.Fecha_Capturada.setCalendar(null);
+           ColocarCodigo();
+        
+        }
+    
+    
     private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
         GestorArticulos form = new GestorArticulos(); //Ingresamos al formulario del cliente
         this.dispose();
     }//GEN-LAST:event_BotonCerrarActionPerformed
 
-    private void ComboDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboDiaActionPerformed
-
     private void GuardarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarBotonActionPerformed
+        ArticuloCN objeto_AN= new ArticuloCN();
+        Articulo articulo = new Articulo();
+                   
+        articulo.setNombre(CampoNombreArticulo.getText());
+        System.out.println("El nombre es: "+ CampoNombreArticulo.getText());
+        
+        int c= ComboBoxCantidad.getSelectedIndex();
+        //int code = Integer.parseInt(c);
+        articulo.setCantidad(c);
+        System.out.println("La cantidad en el combo es "+ c);
+        articulo.setFecha_registro(Fecha_Capturada.getDate());
+       
+        
         if("".equals(CampoNombreArticulo.getText())){
             JOptionPane.showMessageDialog(null, "No ha colocado ningun nombre", "Advertencia", JOptionPane.WARNING_MESSAGE);
             
         }else{
-            JOptionPane.showMessageDialog(null, "Se ha guardado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+             objeto_AN.SolicitarGuardarDatosArticulo(articulo);
+             LimpiarCampos();
         }
     }//GEN-LAST:event_GuardarBotonActionPerformed
 
@@ -329,22 +328,18 @@ public class RegistrarArticulo extends javax.swing.JFrame {
     private javax.swing.JPanel Body;
     private javax.swing.JButton BotonCerrar;
     private javax.swing.JTextField CampoNombreArticulo;
-    private javax.swing.JComboBox<String> ComboAño;
     private javax.swing.JComboBox<String> ComboBoxCantidad;
-    private javax.swing.JComboBox<String> ComboDia;
-    private javax.swing.JComboBox<String> ComboMes;
+    private com.toedter.calendar.JDateChooser Fecha_Capturada;
     private javax.swing.JPanel Footer;
     private javax.swing.JButton GuardarBoton;
     private javax.swing.JPanel Head;
     private javax.swing.JLabel LabelArticulo;
-    private javax.swing.JLabel LabelAño;
     private javax.swing.JLabel LabelCantidad;
     private javax.swing.JLabel LabelFechaRegistro;
     private javax.swing.JLabel LabelFormularioRegistro;
-    private javax.swing.JLabel LabelMes;
     private javax.swing.JLabel LabelNombreArticulo;
     private javax.swing.JLabel LabelRegistrarArticulo;
-    private javax.swing.JLabel LaberDia;
     private javax.swing.JPanel Panel;
+    private javax.swing.JLabel label_codigoAsignado;
     // End of variables declaration//GEN-END:variables
 }

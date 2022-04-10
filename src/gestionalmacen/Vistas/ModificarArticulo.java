@@ -11,13 +11,12 @@ import javax.swing.JOptionPane;
  * @author ALEX
  */
 public class ModificarArticulo extends javax.swing.JFrame {
-
-    /**
-     * Creates new form NewJFrame
-     */
-    public ModificarArticulo() {
+    int codigo=0;
+    
+    public ModificarArticulo(int code) {
         initComponents();
         setVisible(true);
+        this.codigo=code;
     }
 
     /**
@@ -52,7 +51,6 @@ public class ModificarArticulo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 450));
-        setUndecorated(true);
         setResizable(false);
 
         Panel.setBackground(new java.awt.Color(18, 48, 87));
@@ -266,10 +264,20 @@ public class ModificarArticulo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public void LLenarVentana(){
+    
+    
+    
+    }
+    
+    
+    
     private void ComboDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDiaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboDiaActionPerformed
 
+    
+    
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
         JOptionPane.showMessageDialog(null, "Se ha guardado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
         
@@ -315,11 +323,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ModificarArticulo().setVisible(true);
-            }
-        });
+      
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

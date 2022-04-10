@@ -44,7 +44,6 @@ public class GestorArticulos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 450));
-        setUndecorated(true);
         setResizable(false);
 
         Panel.setBackground(new java.awt.Color(18, 48, 87));

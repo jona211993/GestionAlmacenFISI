@@ -15,7 +15,7 @@ public class EliminarArticulo extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public EliminarArticulo() {
+    public EliminarArticulo(int code) {
         initComponents();
         setVisible(true);
     }
@@ -54,7 +54,6 @@ public class EliminarArticulo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 450));
-        setUndecorated(true);
         setResizable(false);
 
         Panel.setBackground(new java.awt.Color(18, 48, 87));
@@ -326,11 +325,11 @@ public class EliminarArticulo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EliminarArticulo().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new EliminarArticulo().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
