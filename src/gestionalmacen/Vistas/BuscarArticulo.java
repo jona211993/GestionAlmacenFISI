@@ -14,11 +14,10 @@ import javax.swing.JOptionPane;
  */
 public class BuscarArticulo extends javax.swing.JFrame {
 
-    
     public BuscarArticulo() {
         initComponents();
         setVisible(true);
-        
+
     }
 
     /**
@@ -206,33 +205,37 @@ public class BuscarArticulo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
-        boolean Encontrado=false;
-        ArticuloCN objeto_AN= new ArticuloCN();
+        boolean Encontrado = false;
+        ArticuloCN objeto_AN = new ArticuloCN();
         Articulo articulo = new Articulo();
-        int code=Integer.parseInt(CampoCodigoArticulo.getText());
-        articulo.setCodigo(code);
-        //si lo encuentra:
-        Encontrado = objeto_AN.SolicitarBuscarCodigoArticulo(articulo);
-        
-        if(Encontrado){
-             JOptionPane.showMessageDialog(null,"SE ENCONTRÓ ARTICULO");
-            if (GestorArticulos.opcionArticulo == 1) {
-                ModificarArticulo form = new ModificarArticulo(code);
-                this.dispose();
-            } else if (GestorArticulos.opcionArticulo == 2) {
-                EliminarArticulo form = new EliminarArticulo(code);
-                this.dispose();
+        int code;
+        if (CampoCodigoArticulo.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "INGRESE UN CODIGO VALIDO");
+        } else {
+            code = Integer.parseInt(CampoCodigoArticulo.getText());
+            articulo.setCodigo(code);
+            //si lo encuentra:
+            Encontrado = objeto_AN.SolicitarBuscarCodigoArticulo(articulo);
+
+            if (Encontrado) {
+                JOptionPane.showMessageDialog(null, "SE ENCONTRÓ ARTICULO");
+                if (GestorArticulos.opcionArticulo == 1) {
+//                System.out.println("Se envio el codigo " + code);
+                    ModificarArticulo form = new ModificarArticulo(code);
+
+                    this.dispose();
+                } else if (GestorArticulos.opcionArticulo == 2) {
+                    EliminarArticulo form = new EliminarArticulo(code);
+                    this.dispose();
+
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "ARTICULO NO ENCONTRADO");
 
             }
-                
-        }else{
-                JOptionPane.showMessageDialog(null,"ARTICULO NO ENCONTRADO");
-                
         }
-        
-        
-        
-        
+
     }//GEN-LAST:event_BotonBuscarActionPerformed
 
     private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed

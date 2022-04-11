@@ -4,6 +4,8 @@
  */
 package gestionalmacen.Vistas;
 
+import gestionalmacen.CapaEntidades.Articulo;
+import gestionalmacen.CapaNegocio.ArticuloCN;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,12 +13,16 @@ import javax.swing.JOptionPane;
  * @author ALEX
  */
 public class ModificarArticulo extends javax.swing.JFrame {
-    int codigo=0;
-    
+
+    int codigo;
+
     public ModificarArticulo(int code) {
         initComponents();
+
         setVisible(true);
-        this.codigo=code;
+        this.codigo = code;
+        LLenarVentana();
+
     }
 
     /**
@@ -230,19 +236,47 @@ public class ModificarArticulo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void LLenarVentana(){
-    
-    
-    
+    public void LLenarVentana() {
+
+        ArticuloCN objeto_AN = new ArticuloCN();
+        Articulo articulo_mostrar = new Articulo();
+
+        articulo_mostrar.setCodigo(objeto_AN.SolicitarDatosArticulo(codigo).getCodigo());
+        articulo_mostrar.setNombre(objeto_AN.SolicitarDatosArticulo(codigo).getNombre());
+        articulo_mostrar.setCantidad(objeto_AN.SolicitarDatosArticulo(codigo).getCantidad());
+        articulo_mostrar.setFecha_registro(objeto_AN.SolicitarDatosArticulo(codigo).getFecha_registro());
+
+        this.CampoNombreArticulo.setText(articulo_mostrar.getNombre());
+        this.ComboBoxCantidad.setSelectedIndex(articulo_mostrar.getCantidad());
+        this.jDateChooser1.setDate(articulo_mostrar.getFecha_registro());
+
     }
-    
-    
-    
-    
-    
+
+
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
-        JOptionPane.showMessageDialog(null, "Se ha guardado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-        
+
+        ArticuloCN objeto_AN = new ArticuloCN();
+        Articulo articulo = new Articulo();
+
+        articulo.setCodigo(codigo);
+        articulo.setNombre(CampoNombreArticulo.getText());
+
+        int c = ComboBoxCantidad.getSelectedIndex();
+
+        articulo.setCantidad(c);
+
+        articulo.setFecha_registro(jDateChooser1.getDate());
+
+        if ("".equals(CampoNombreArticulo.getText())) {
+            JOptionPane.showMessageDialog(null, "No ha colocado ningun nombre", "Advertencia", JOptionPane.WARNING_MESSAGE);
+
+        } else {
+            objeto_AN.SolicitarModificarArticulo(articulo);
+
+        }
+
+        //JOptionPane.showMessageDialog(null, "Se ha guardado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_BotonGuardarActionPerformed
 
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
@@ -285,7 +319,6 @@ public class ModificarArticulo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-      
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,21 +1,25 @@
 package gestionalmacen.CapaAccesoDatos;
 
 import gestionalmacen.CapaEntidades.Articulo;
+import gestionalmacen.DB.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 public class GestorModificarArticulo {
 
     private String mensaje = "";
 
-    public String GuardarDatosArticulo(Connection con, Articulo art) {
+    public String GuardarCambiosArticulo( Connection con, Articulo art) {
+       
         PreparedStatement pstm = null;
-        String sql = "UPDATE articulo SET nombre =?, cantidad= ?, fecha_registro=?"
-                + " WHERE codigo=?";
+        
+        String sql = "UPDATE articulo SET nombre = ?, cantidad = ?, fecha_registro = ?"
+                + "WHERE codigo=?";
 
         try {
             pstm = con.prepareStatement(sql);
@@ -30,14 +34,11 @@ public class GestorModificarArticulo {
             java.sql.Date fecha = java.sql.Date.valueOf(FechaAformatear);
 
             pstm.setDate(3, fecha);
+           
             pstm.setInt(4, art.getCodigo());
-            ResultSet rs = pstm.executeQuery();
-
-            if (rs.next()) {
-                mensaje = " MODIFICADO CORRECTAMENTE";
-
-            }else{  mensaje = "CODIGO DE ARTICULO NO ENCONTRADO";}
-            rs.close();
+            int filas =pstm.executeUpdate();
+            System.out.println("filas procesadas en actualacion"+filas);
+            JOptionPane.showMessageDialog(null, "SE GUARDARON LOS CAMBIOS", "Mensaje", JOptionPane.WARNING_MESSAGE);
             pstm.close();
 
         } catch (SQLException e) {
