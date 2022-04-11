@@ -33,17 +33,19 @@ public class BuscarArticulo extends javax.swing.JFrame {
         Panel = new javax.swing.JPanel();
         Head = new javax.swing.JPanel();
         LabelBuscarArticulo = new javax.swing.JLabel();
+        BotonAtras = new javax.swing.JButton();
         Body = new javax.swing.JPanel();
         LabelArticulo = new javax.swing.JLabel();
         LabelCodigoArticulo = new javax.swing.JLabel();
         CampoCodigoArticulo = new javax.swing.JTextField();
         Footer = new javax.swing.JPanel();
         LabelBuscarCoNo = new javax.swing.JLabel();
-        BotonAtras = new javax.swing.JButton();
         BotonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(600, 450));
+        setMaximumSize(new java.awt.Dimension(600, 350));
+        setMinimumSize(new java.awt.Dimension(600, 350));
+        setPreferredSize(new java.awt.Dimension(600, 350));
         setResizable(false);
 
         Panel.setBackground(new java.awt.Color(18, 48, 87));
@@ -54,20 +56,38 @@ public class BuscarArticulo extends javax.swing.JFrame {
         LabelBuscarArticulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LabelBuscarArticulo.setText("Buscar Articulo");
 
+        BotonAtras.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        BotonAtras.setForeground(new java.awt.Color(255, 255, 255));
+        BotonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/X.png"))); // NOI18N
+        BotonAtras.setText("Salir");
+        BotonAtras.setBorderPainted(false);
+        BotonAtras.setContentAreaFilled(false);
+        BotonAtras.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        BotonAtras.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/XPresionado.png"))); // NOI18N
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAtrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout HeadLayout = new javax.swing.GroupLayout(Head);
         Head.setLayout(HeadLayout);
         HeadLayout.setHorizontalGroup(
             HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelBuscarArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
-                .addGap(96, 96, 96))
+                .addComponent(LabelBuscarArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(53, 53, 53)
+                .addComponent(BotonAtras)
+                .addContainerGap())
         );
         HeadLayout.setVerticalGroup(
             HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadLayout.createSequentialGroup()
-                .addComponent(LabelBuscarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelBuscarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonAtras))
+                .addContainerGap())
         );
 
         Body.setBackground(new java.awt.Color(226, 162, 43));
@@ -104,7 +124,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
                 .addComponent(LabelCodigoArticulo)
                 .addGap(20, 20, 20)
                 .addComponent(CampoCodigoArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 34, Short.MAX_VALUE))
+                .addGap(0, 17, Short.MAX_VALUE))
         );
 
         Footer.setBackground(new java.awt.Color(5, 9, 25));
@@ -117,7 +137,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
         );
         FooterLayout.setVerticalGroup(
             FooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 33, Short.MAX_VALUE)
+            .addGap(0, 46, Short.MAX_VALUE)
         );
 
         LabelBuscarCoNo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -125,19 +145,15 @@ public class BuscarArticulo extends javax.swing.JFrame {
         LabelBuscarCoNo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelBuscarCoNo.setText("Buscar por codigo y nombre");
 
-        BotonAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Atras.png"))); // NOI18N
-        BotonAtras.setBorderPainted(false);
-        BotonAtras.setContentAreaFilled(false);
-        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAtrasActionPerformed(evt);
-            }
-        });
-
+        BotonBuscar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        BotonBuscar.setForeground(new java.awt.Color(255, 255, 255));
         BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Buscar.png"))); // NOI18N
+        BotonBuscar.setText("Buscar");
         BotonBuscar.setBorderPainted(false);
         BotonBuscar.setContentAreaFilled(false);
+        BotonBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BotonBuscar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/BuscarPresionado.png"))); // NOI18N
+        BotonBuscar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonBuscarActionPerformed(evt);
@@ -148,46 +164,29 @@ public class BuscarArticulo extends javax.swing.JFrame {
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Head, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Footer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelBuscarCoNo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(PanelLayout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(PanelLayout.createSequentialGroup()
-
-
-                .addGap(168, 168, 168)
-
-                .addComponent(BotonAtras)
-
-                .addGap(99, 99, 99)
-                .addComponent(BotonBuscar)
-
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(BotonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addComponent(LabelBuscarCoNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Head, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
-                .addComponent(Head, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(LabelBuscarCoNo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-
-                .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonAtras)
-                    .addComponent(BotonBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-
+                .addComponent(Head, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelBuscarCoNo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(BotonBuscar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -199,7 +198,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

@@ -37,13 +37,8 @@ public class ModificarArticulo extends javax.swing.JFrame {
         LabelCantidad = new javax.swing.JLabel();
         ComboBoxCantidad = new javax.swing.JComboBox<>();
         LabelFechaRegistro = new javax.swing.JLabel();
-        LaberDia = new javax.swing.JLabel();
-        ComboDia = new javax.swing.JComboBox<>();
-        ComboMes = new javax.swing.JComboBox<>();
-        LabelMes = new javax.swing.JLabel();
-        ComboAño = new javax.swing.JComboBox<>();
-        LabelAño = new javax.swing.JLabel();
         CampoNombreArticulo = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
         BotonVolver = new javax.swing.JButton();
@@ -95,29 +90,6 @@ public class ModificarArticulo extends javax.swing.JFrame {
         LabelFechaRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelFechaRegistro.setText("Fecha de Registro");
 
-        LaberDia.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        LaberDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LaberDia.setText("Día:");
-
-        ComboDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        ComboDia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboDiaActionPerformed(evt);
-            }
-        });
-
-        ComboMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", " " }));
-
-        LabelMes.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        LabelMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelMes.setText("Mes:");
-
-        ComboAño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
-
-        LabelAño.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        LabelAño.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelAño.setText("Año:");
-
         CampoNombreArticulo.setText("*****************************************************");
 
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
@@ -135,21 +107,10 @@ public class ModificarArticulo extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(BodyLayout.createSequentialGroup()
-                                .addComponent(LaberDia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComboDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(LabelMes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComboMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelAño, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ComboAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(LabelArticulo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         BodyLayout.setVerticalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,15 +126,10 @@ public class ModificarArticulo extends javax.swing.JFrame {
                     .addComponent(LabelCantidad)
                     .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelFechaRegistro)
-                    .addComponent(LaberDia)
-                    .addComponent(ComboDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelMes)
-                    .addComponent(ComboMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelAño)
-                    .addComponent(ComboAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 46, Short.MAX_VALUE))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 37, Short.MAX_VALUE))
         );
 
         Footer.setBackground(new java.awt.Color(5, 9, 25));
@@ -194,20 +150,30 @@ public class ModificarArticulo extends javax.swing.JFrame {
         LabelFormularioRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelFormularioRegistro.setText("FORMULARIO DE REGISTRO");
 
+        BotonVolver.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        BotonVolver.setForeground(new java.awt.Color(255, 255, 255));
         BotonVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Atras.png"))); // NOI18N
+        BotonVolver.setText("Atras");
         BotonVolver.setBorderPainted(false);
         BotonVolver.setContentAreaFilled(false);
+        BotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BotonVolver.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/AtrasPresionado.png"))); // NOI18N
+        BotonVolver.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BotonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVolverActionPerformed(evt);
             }
         });
 
+        BotonGuardar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        BotonGuardar.setForeground(new java.awt.Color(255, 255, 255));
         BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Guardar.png"))); // NOI18N
+        BotonGuardar.setText("Guardar");
         BotonGuardar.setBorderPainted(false);
         BotonGuardar.setContentAreaFilled(false);
+        BotonGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BotonGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/GuardarPresionado.png"))); // NOI18N
+        BotonGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BotonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonGuardarActionPerformed(evt);
@@ -227,9 +193,9 @@ public class ModificarArticulo extends javax.swing.JFrame {
                     .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(PanelLayout.createSequentialGroup()
-                .addGap(167, 167, 167)
+                .addGap(168, 168, 168)
                 .addComponent(BotonVolver)
-                .addGap(105, 105, 105)
+                .addGap(103, 103, 103)
                 .addComponent(BotonGuardar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -242,10 +208,10 @@ public class ModificarArticulo extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonVolver, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonGuardar, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BotonVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -272,10 +238,6 @@ public class ModificarArticulo extends javax.swing.JFrame {
     
     
     
-    private void ComboDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboDiaActionPerformed
-
     
     
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
@@ -331,21 +293,16 @@ public class ModificarArticulo extends javax.swing.JFrame {
     private javax.swing.JButton BotonGuardar;
     private javax.swing.JButton BotonVolver;
     private javax.swing.JTextField CampoNombreArticulo;
-    private javax.swing.JComboBox<String> ComboAño;
     private javax.swing.JComboBox<String> ComboBoxCantidad;
-    private javax.swing.JComboBox<String> ComboDia;
-    private javax.swing.JComboBox<String> ComboMes;
     private javax.swing.JPanel Footer;
     private javax.swing.JPanel Head;
     private javax.swing.JLabel LabelArticulo;
-    private javax.swing.JLabel LabelAño;
     private javax.swing.JLabel LabelCantidad;
     private javax.swing.JLabel LabelFechaRegistro;
     private javax.swing.JLabel LabelFormularioRegistro;
-    private javax.swing.JLabel LabelMes;
     private javax.swing.JLabel LabelModificarArticulo;
     private javax.swing.JLabel LabelNombreArticulo;
-    private javax.swing.JLabel LaberDia;
     private javax.swing.JPanel Panel;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     // End of variables declaration//GEN-END:variables
 }

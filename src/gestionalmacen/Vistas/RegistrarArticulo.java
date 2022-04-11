@@ -67,10 +67,14 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         LabelRegistrarArticulo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LabelRegistrarArticulo.setText("Registrar Articulo");
 
+        BotonCerrar.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         BotonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Salir.png"))); // NOI18N
+        BotonCerrar.setText("Salir");
         BotonCerrar.setBorderPainted(false);
         BotonCerrar.setContentAreaFilled(false);
+        BotonCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BotonCerrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/SalirPresionado.png"))); // NOI18N
+        BotonCerrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCerrarActionPerformed(evt);
@@ -83,18 +87,20 @@ public class RegistrarArticulo extends javax.swing.JFrame {
             HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelRegistrarArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addComponent(LabelRegistrarArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                .addGap(92, 92, 92)
+                .addComponent(BotonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         HeadLayout.setVerticalGroup(
             HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeadLayout.createSequentialGroup()
-                .addGroup(HeadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LabelRegistrarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelRegistrarArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeadLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(BotonCerrar))
         );
 
         Body.setBackground(new java.awt.Color(226, 162, 43));
@@ -190,10 +196,17 @@ public class RegistrarArticulo extends javax.swing.JFrame {
         LabelFormularioRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelFormularioRegistro.setText("FORMULARIO DE REGISTRO");
 
+        GuardarBoton.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        GuardarBoton.setForeground(new java.awt.Color(255, 255, 255));
         GuardarBoton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Guardar.png"))); // NOI18N
+        GuardarBoton.setText("Guardar");
         GuardarBoton.setBorderPainted(false);
         GuardarBoton.setContentAreaFilled(false);
+        GuardarBoton.setFocusable(false);
+        GuardarBoton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         GuardarBoton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/GuardarPresionado.png"))); // NOI18N
+        GuardarBoton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        GuardarBoton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         GuardarBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarBotonActionPerformed(evt);
@@ -214,7 +227,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(GuardarBoton)
@@ -224,7 +237,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLayout.createSequentialGroup()
                 .addComponent(Head, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(59, 59, 59)
                 .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(Body, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

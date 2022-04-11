@@ -210,20 +210,30 @@ public class EliminarArticulo extends javax.swing.JFrame {
         LabelFormularioRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelFormularioRegistro.setText("FORMULARIO DE REGISTRO");
 
+        BotonGuardar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        BotonGuardar.setForeground(new java.awt.Color(255, 255, 255));
         BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Eliminar.png"))); // NOI18N
+        BotonGuardar.setText("Eliminar");
         BotonGuardar.setBorderPainted(false);
         BotonGuardar.setContentAreaFilled(false);
+        BotonGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BotonGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/EliminarPresionado.png"))); // NOI18N
+        BotonGuardar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BotonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonGuardarActionPerformed(evt);
             }
         });
 
+        BotonVolver.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        BotonVolver.setForeground(new java.awt.Color(255, 255, 255));
         BotonVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/Atras.png"))); // NOI18N
+        BotonVolver.setText("Atrás");
         BotonVolver.setBorderPainted(false);
         BotonVolver.setContentAreaFilled(false);
+        BotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BotonVolver.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/AtrasPresionado.png"))); // NOI18N
+        BotonVolver.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BotonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVolverActionPerformed(evt);
@@ -261,7 +271,7 @@ public class EliminarArticulo extends javax.swing.JFrame {
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BotonVolver)
                     .addComponent(BotonGuardar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Footer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
