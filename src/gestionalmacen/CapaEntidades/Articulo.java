@@ -2,7 +2,7 @@ package gestionalmacen.CapaEntidades;
 
 import java.util.Date;
 
-public class Articulo {
+public class Articulo implements Cloneable {
 
     private int codigo;
     private String nombre;
@@ -49,6 +49,11 @@ public class Articulo {
 
     public void setFecha_registro(Date fecha_registro) {
         this.fecha_registro = fecha_registro;
+    }
+
+    public Articulo clone() throws CloneNotSupportedException {
+        Articulo obj = (Articulo) super.clone();
+        return obj;
     }
 
     @Override

@@ -45,6 +45,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
         LabelFechaRegistro = new javax.swing.JLabel();
         CampoNombreArticulo = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        label_codigo = new javax.swing.JLabel();
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
         BotonVolver = new javax.swing.JButton();
@@ -81,7 +82,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
         Body.setBackground(new java.awt.Color(226, 162, 43));
 
         LabelArticulo.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        LabelArticulo.setText("Artículo");
+        LabelArticulo.setText("Codigo Artículo");
 
         LabelNombreArticulo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         LabelNombreArticulo.setText("Nombre de Artículo");
@@ -97,6 +98,10 @@ public class ModificarArticulo extends javax.swing.JFrame {
         LabelFechaRegistro.setText("Fecha de Registro");
 
         CampoNombreArticulo.setText("*****************************************************");
+
+        label_codigo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label_codigo.setForeground(new java.awt.Color(0, 153, 51));
+        label_codigo.setText("+++++");
 
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
@@ -115,15 +120,21 @@ public class ModificarArticulo extends javax.swing.JFrame {
                             .addComponent(ComboBoxCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(LabelArticulo))
+                    .addGroup(BodyLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(LabelArticulo)
+                        .addGap(33, 33, 33)
+                        .addComponent(label_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
         BodyLayout.setVerticalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyLayout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(LabelArticulo)
-                .addGap(18, 18, 18)
+                .addGap(9, 9, 9)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_codigo)
+                    .addComponent(LabelArticulo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNombreArticulo)
                     .addComponent(CampoNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -246,6 +257,7 @@ public class ModificarArticulo extends javax.swing.JFrame {
         articulo_mostrar.setCantidad(objeto_AN.SolicitarDatosArticulo(codigo).getCantidad());
         articulo_mostrar.setFecha_registro(objeto_AN.SolicitarDatosArticulo(codigo).getFecha_registro());
 
+        this.label_codigo.setText(String.valueOf(articulo_mostrar.getCodigo()));
         this.CampoNombreArticulo.setText(articulo_mostrar.getNombre());
         this.ComboBoxCantidad.setSelectedIndex(articulo_mostrar.getCantidad());
         this.jDateChooser1.setDate(articulo_mostrar.getFecha_registro());
@@ -337,5 +349,6 @@ public class ModificarArticulo extends javax.swing.JFrame {
     private javax.swing.JLabel LabelNombreArticulo;
     private javax.swing.JPanel Panel;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel label_codigo;
     // End of variables declaration//GEN-END:variables
 }

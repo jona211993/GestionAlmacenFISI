@@ -4,6 +4,13 @@
  */
 package gestionalmacen.Vistas;
 
+import gestionalmacen.CapaEntidades.Articulo;
+import gestionalmacen.CapaNegocio.ArticuloCN;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,12 +19,13 @@ import javax.swing.JOptionPane;
  */
 public class EliminarArticulo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewJFrame
-     */
+    int codigo;
+
     public EliminarArticulo(int code) {
         initComponents();
         setVisible(true);
+        this.codigo = code;
+        LLenarVentana();
     }
 
     /**
@@ -37,16 +45,11 @@ public class EliminarArticulo extends javax.swing.JFrame {
         LabelNombreArticulo = new javax.swing.JLabel();
         LabelCantidad = new javax.swing.JLabel();
         LabelFechaRegistro = new javax.swing.JLabel();
-        LaberDia = new javax.swing.JLabel();
-        LabelMes = new javax.swing.JLabel();
-        LabelAño = new javax.swing.JLabel();
-        LabelNombreRespuesta = new javax.swing.JLabel();
-        LabelRespuestaCantidad = new javax.swing.JLabel();
-        LabelRespuestaDia = new javax.swing.JLabel();
-        LabelRespuestaMes = new javax.swing.JLabel();
-        LabelRespuestaAño = new javax.swing.JLabel();
+        label_codigo = new javax.swing.JLabel();
+        label_cantidad = new javax.swing.JLabel();
+        label_fecha = new javax.swing.JLabel();
         LabelNombreArticulo1 = new javax.swing.JLabel();
-        LabelNombreRespuesta1 = new javax.swing.JLabel();
+        label_nombre = new javax.swing.JLabel();
         Footer = new javax.swing.JPanel();
         LabelFormularioRegistro = new javax.swing.JLabel();
         BotonGuardar = new javax.swing.JButton();
@@ -97,99 +100,76 @@ public class EliminarArticulo extends javax.swing.JFrame {
         LabelFechaRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelFechaRegistro.setText("Fecha de Registro");
 
-        LaberDia.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        LaberDia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LaberDia.setText("Día:");
+        label_codigo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        label_codigo.setForeground(new java.awt.Color(0, 153, 51));
+        label_codigo.setText("**************************************************");
 
-        LabelMes.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        LabelMes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelMes.setText("Mes:");
+        label_cantidad.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        label_cantidad.setText("XXXXX");
 
-        LabelAño.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        LabelAño.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelAño.setText("Año:");
-
-        LabelNombreRespuesta.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        LabelNombreRespuesta.setText("**************************************************");
-
-        LabelRespuestaCantidad.setText("XXXXX");
-
-        LabelRespuestaDia.setText("XX");
-
-        LabelRespuestaMes.setText("XX");
-
-        LabelRespuestaAño.setText("XXXX");
+        label_fecha.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        label_fecha.setText("xxxxxxx");
 
         LabelNombreArticulo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         LabelNombreArticulo1.setText("Código de Artículo");
 
-        LabelNombreRespuesta1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        LabelNombreRespuesta1.setText("**************************************************");
+        label_nombre.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        label_nombre.setText("**************************************************");
 
         javax.swing.GroupLayout BodyLayout = new javax.swing.GroupLayout(Body);
         Body.setLayout(BodyLayout);
         BodyLayout.setHorizontalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BodyLayout.createSequentialGroup()
-                        .addComponent(LabelNombreArticulo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(LabelArticulo))
                     .addGroup(BodyLayout.createSequentialGroup()
+                        .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(LabelNombreArticulo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LabelFechaRegistro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LabelNombreArticulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                            .addGroup(BodyLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(LabelCantidad)
+                                .addGap(32, 32, 32)))
                         .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(BodyLayout.createSequentialGroup()
-                                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(LabelFechaRegistro, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(LabelNombreArticulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(LabelCantidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(37, 37, 37)
+                                .addGap(36, 36, 36)
+                                .addComponent(label_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(BodyLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(label_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(BodyLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
                                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LabelRespuestaCantidad)
-                                    .addComponent(LabelNombreRespuesta1)
-                                    .addGroup(BodyLayout.createSequentialGroup()
-                                        .addComponent(LaberDia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(LabelRespuestaDia)
-                                        .addGap(20, 20, 20)
-                                        .addComponent(LabelMes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(1, 1, 1)
-                                        .addComponent(LabelRespuestaMes)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(LabelAño, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(LabelRespuestaAño))
-                                    .addComponent(LabelNombreRespuesta)))
-                            .addComponent(LabelArticulo))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(label_cantidad)
+                                    .addComponent(label_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BodyLayout.setVerticalGroup(
             BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BodyLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(LabelArticulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelNombreArticulo1)
-                    .addComponent(LabelNombreRespuesta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelNombreArticulo1)
+                    .addComponent(label_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNombreArticulo)
-                    .addComponent(LabelNombreRespuesta1))
+                    .addComponent(label_nombre))
                 .addGap(18, 18, 18)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCantidad)
-                    .addComponent(LabelRespuestaCantidad))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(label_cantidad))
+                .addGap(18, 18, 18)
                 .addGroup(BodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelFechaRegistro)
-                    .addComponent(LaberDia)
-                    .addComponent(LabelMes)
-                    .addComponent(LabelAño)
-                    .addComponent(LabelRespuestaDia)
-                    .addComponent(LabelRespuestaMes)
-                    .addComponent(LabelRespuestaAño))
-                .addContainerGap())
+                    .addComponent(label_fecha))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         Footer.setBackground(new java.awt.Color(5, 9, 25));
@@ -208,7 +188,7 @@ public class EliminarArticulo extends javax.swing.JFrame {
         LabelFormularioRegistro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         LabelFormularioRegistro.setForeground(new java.awt.Color(255, 255, 255));
         LabelFormularioRegistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelFormularioRegistro.setText("FORMULARIO DE REGISTRO");
+        LabelFormularioRegistro.setText("SE ELIMINARÁ EL SIGUIENTE ARTICULO");
 
         BotonGuardar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         BotonGuardar.setForeground(new java.awt.Color(255, 255, 255));
@@ -246,18 +226,17 @@ public class EliminarArticulo extends javax.swing.JFrame {
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Head, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Footer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(PanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BotonVolver)
                 .addGap(109, 109, 109)
                 .addComponent(BotonGuardar)
                 .addGap(142, 142, 142))
+            .addGroup(PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelFormularioRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(Body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelLayout.setVerticalGroup(
             PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,9 +269,53 @@ public class EliminarArticulo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public void LLenarVentana() {
+
+        ArticuloCN objeto_AN = new ArticuloCN();
+        Articulo articulo_mostrar = new Articulo();
+        try {
+            articulo_mostrar = objeto_AN.SolicitarDatosArticulo(codigo).clone();
+        } catch (CloneNotSupportedException e) {
+        }
+
+        this.label_codigo.setText(String.valueOf(articulo_mostrar.getCodigo()));
+        this.label_nombre.setText(articulo_mostrar.getNombre());
+        this.label_cantidad.setText(String.valueOf(articulo_mostrar.getCantidad()));
+        this.label_fecha.setText(String.format("%1$td/%1$tm/%1$tY", articulo_mostrar.getFecha_registro()));
+
+    }
+
+
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
-        JOptionPane.showMessageDialog(null, "Se ha eliminado correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-        
+
+        ArticuloCN objeto_AN = new ArticuloCN();
+        Articulo articulo = new Articulo();
+
+        articulo.setCodigo(codigo);
+        articulo.setNombre(label_nombre.getText());
+        int c = Integer.parseInt(label_cantidad.getText());
+        articulo.setCantidad(c);
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date fecha = formato.parse(label_fecha.getText());
+            articulo.setFecha_registro(fecha);
+        } catch (ParseException ex) {
+            Logger.getLogger(EliminarArticulo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String botones[] = {"Eliminar", "Cancelar"};
+        int eleccion = JOptionPane.showOptionDialog(this, "¿Esta seguro de eliminar este articulo?", "Titulo", 0, 0, null, botones, this);
+        if (eleccion == JOptionPane.YES_OPTION) {
+            objeto_AN.SolicitarEliminarArticulo(articulo);
+            JOptionPane.showMessageDialog(null, "SE ELIMINÓ CORRECTAMENTE EL ARTICULO ");
+            GestorArticulos form = new GestorArticulos();
+            this.dispose();
+
+        } else {
+            System.out.println("Se cancelo la eliminacion");
+
+        }
+
+
     }//GEN-LAST:event_BotonGuardarActionPerformed
 
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
@@ -349,21 +372,16 @@ public class EliminarArticulo extends javax.swing.JFrame {
     private javax.swing.JPanel Footer;
     private javax.swing.JPanel Head;
     private javax.swing.JLabel LabelArticulo;
-    private javax.swing.JLabel LabelAño;
     private javax.swing.JLabel LabelCantidad;
     private javax.swing.JLabel LabelEliminarArticulo;
     private javax.swing.JLabel LabelFechaRegistro;
     private javax.swing.JLabel LabelFormularioRegistro;
-    private javax.swing.JLabel LabelMes;
     private javax.swing.JLabel LabelNombreArticulo;
     private javax.swing.JLabel LabelNombreArticulo1;
-    private javax.swing.JLabel LabelNombreRespuesta;
-    private javax.swing.JLabel LabelNombreRespuesta1;
-    private javax.swing.JLabel LabelRespuestaAño;
-    private javax.swing.JLabel LabelRespuestaCantidad;
-    private javax.swing.JLabel LabelRespuestaDia;
-    private javax.swing.JLabel LabelRespuestaMes;
-    private javax.swing.JLabel LaberDia;
     private javax.swing.JPanel Panel;
+    private javax.swing.JLabel label_cantidad;
+    private javax.swing.JLabel label_codigo;
+    private javax.swing.JLabel label_fecha;
+    private javax.swing.JLabel label_nombre;
     // End of variables declaration//GEN-END:variables
 }

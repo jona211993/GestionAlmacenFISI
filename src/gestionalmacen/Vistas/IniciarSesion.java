@@ -5,23 +5,22 @@
  */
 package gestionalmacen.Vistas;
 
-
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
-
 public class IniciarSesion extends javax.swing.JFrame {
- 
+
     public IniciarSesion() {
         initComponents();
         setVisible(true);//Hace visible la ventana, porque por default no lo hace
     }
-    
+
     //Funcion iniciar sesion
-    public void iniciarSesion(){
-        String user = CampoUsuario.getText();//Mediante el getText() extraemos lo que está en el CampoUsuario
-        String password = CampoContraseña.getText();//En este caso es algo distinto. Aparece rayado porque es una funcion desactualizada pero sirve aún
-        
+    public void iniciarSesion() {
+
+        // String user = CampoUsuario.getText();
+////Mediante el getText() extraemos lo que está en el CampoUsuario
+//        String password = user.getText();//En este caso es algo distinto. Aparece rayado porque es una funcion desactualizada pero sirve aún
         //OlvaCourier.usuarioActual = OlvaCourier.personas.validar(user, password);
 
         /*if(OlvaCourier.usuarioActual != null){
@@ -54,7 +53,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             this.CampoContraseña.setText("");
         }*/
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,12 +66,12 @@ public class IniciarSesion extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Fondo = new javax.swing.JPanel();
         IngresoDatos = new javax.swing.JPanel();
-        CampoUsuario = new javax.swing.JTextField();
         etiquetaUsuario = new javax.swing.JLabel();
         etiquetaContraseña = new javax.swing.JLabel();
-        CampoContraseña = new javax.swing.JPasswordField();
         botonIngresar = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
+        Text_Password = new javax.swing.JPasswordField();
+        Text_user = new javax.swing.JTextField();
         FondoMarca = new javax.swing.JPanel();
         FondoHead = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -90,22 +89,8 @@ public class IniciarSesion extends javax.swing.JFrame {
         Fondo.setBackground(new java.awt.Color(18, 48, 87));
 
         IngresoDatos.setBackground(new java.awt.Color(226, 162, 43));
+        IngresoDatos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(18, 48, 87), 10, true));
         IngresoDatos.setForeground(new java.awt.Color(255, 255, 255));
-
-        CampoUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        CampoUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoUsuarioActionPerformed(evt);
-            }
-        });
-        CampoUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                CampoUsuarioKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                CampoUsuarioKeyTyped(evt);
-            }
-        });
 
         etiquetaUsuario.setFont(new java.awt.Font("Yu Gothic UI", 1, 16)); // NOI18N
         etiquetaUsuario.setForeground(new java.awt.Color(56, 56, 55));
@@ -116,26 +101,11 @@ public class IniciarSesion extends javax.swing.JFrame {
         etiquetaContraseña.setForeground(new java.awt.Color(56, 56, 55));
         etiquetaContraseña.setText("Contraseña");
 
-        CampoContraseña.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        CampoContraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoContraseñaActionPerformed(evt);
-            }
-        });
-        CampoContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                CampoContraseñaKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                CampoContraseñaKeyTyped(evt);
-            }
-        });
-
         botonIngresar.setBackground(new java.awt.Color(64, 170, 173));
         botonIngresar.setFont(new java.awt.Font("Yu Gothic UI", 3, 14)); // NOI18N
         botonIngresar.setForeground(new java.awt.Color(56, 56, 55));
         botonIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/IniciarSesion.png"))); // NOI18N
-        botonIngresar.setText("Iniciar");
+        botonIngresar.setText("Ingresar");
         botonIngresar.setBorderPainted(false);
         botonIngresar.setContentAreaFilled(false);
         botonIngresar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -163,22 +133,42 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
+        Text_Password.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        Text_Password.setForeground(new java.awt.Color(51, 153, 255));
+        Text_Password.setEchoChar('\u25cf');
+        Text_Password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_PasswordActionPerformed(evt);
+            }
+        });
+
+        Text_user.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Text_user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Text_userActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout IngresoDatosLayout = new javax.swing.GroupLayout(IngresoDatos);
         IngresoDatos.setLayout(IngresoDatosLayout);
         IngresoDatosLayout.setHorizontalGroup(
             IngresoDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IngresoDatosLayout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addGroup(IngresoDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addGroup(IngresoDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiquetaContraseña)
+                    .addComponent(etiquetaUsuario))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IngresoDatosLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(IngresoDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Text_user, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(IngresoDatosLayout.createSequentialGroup()
                         .addComponent(botonIngresar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(botonSalir))
-                    .addComponent(CampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(etiquetaContraseña)
-                    .addComponent(etiquetaUsuario)
-                    .addComponent(CampoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 83, Short.MAX_VALUE))
+                    .addComponent(Text_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
         );
         IngresoDatosLayout.setVerticalGroup(
             IngresoDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,12 +176,12 @@ public class IniciarSesion extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(etiquetaUsuario)
                 .addGap(18, 18, 18)
-                .addComponent(CampoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addComponent(Text_user, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(etiquetaContraseña)
-                .addGap(26, 26, 26)
-                .addComponent(CampoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
+                .addGap(18, 18, 18)
+                .addComponent(Text_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83)
                 .addGroup(IngresoDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IngresoDatosLayout.createSequentialGroup()
                         .addComponent(botonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -201,7 +191,7 @@ public class IniciarSesion extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        FondoMarca.setBackground(new java.awt.Color(22, 108, 169));
+        FondoMarca.setBackground(new java.awt.Color(255, 255, 255));
         FondoMarca.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         FondoHead.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -215,6 +205,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         FondoHead.setPreferredSize(new java.awt.Dimension(230, 93));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Historic", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Sistema de Almacén de FISI");
         jLabel2.setToolTipText("");
@@ -226,24 +217,23 @@ public class IniciarSesion extends javax.swing.JFrame {
         FondoMarcaLayout.setHorizontalGroup(
             FondoMarcaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FondoMarcaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(FondoHead, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(629, Short.MAX_VALUE))
+                .addGap(6, 6, 6)
+                .addComponent(FondoHead, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(740, Short.MAX_VALUE))
         );
         FondoMarcaLayout.setVerticalGroup(
             FondoMarcaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FondoMarcaLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(FondoMarcaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(FondoMarcaLayout.createSequentialGroup()
-                        .addComponent(FondoHead, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(46, Short.MAX_VALUE))
-                    .addGroup(FondoMarcaLayout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(19, 19, 19))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoMarcaLayout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addGroup(FondoMarcaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(FondoHead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
+
+        FondoImagen.setBackground(new java.awt.Color(18, 48, 87));
 
         Imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gestionalmacen/Vistas/iconos/FondoFisi.jpg"))); // NOI18N
 
@@ -272,9 +262,9 @@ public class IniciarSesion extends javax.swing.JFrame {
                 .addGroup(FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(FondoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(FondoLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(40, 40, 40)
                         .addComponent(FondoImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(53, 53, 53)
                         .addComponent(IngresoDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -282,20 +272,18 @@ public class IniciarSesion extends javax.swing.JFrame {
             FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FondoLayout.createSequentialGroup()
                 .addComponent(FondoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addGroup(FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(FondoImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(IngresoDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FondoImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IngresoDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 922, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 896, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,70 +294,42 @@ public class IniciarSesion extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CampoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CampoUsuarioActionPerformed
-
-    private void CampoContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoContraseñaActionPerformed
-        
-    }//GEN-LAST:event_CampoContraseñaActionPerformed
-    
     private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
-        
-        GestorArticulos form = new GestorArticulos();
-        this.dispose();
+        String usuario = Text_user.getText();
+        String contraseña = Text_Password.getText();
 
-        
+        if (usuario.isEmpty() || contraseña.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Algún campo está vacio");
+        } else {
+            if (usuario.equals("almacenista") && contraseña.equals("1234")) {
+                JOptionPane.showMessageDialog(null, "Bienvenido !!   Almacenista");
+                GestorArticulos form = new GestorArticulos();
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Su usuario o contraseña son incorrectos");
+            }
 
-        
-        
-        
-        
-        
-        
-        
+        }
 
-        /*//OlvaCourier.CargarListas(l);
-        //l.desplegarLista();
-        
-        iniciarSesion();
-        */
+
     }//GEN-LAST:event_botonIngresarActionPerformed
-
-    private void CampoUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoUsuarioKeyTyped
-
-    }//GEN-LAST:event_CampoUsuarioKeyTyped
-
-    private void CampoContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoContraseñaKeyTyped
-        
-    }//GEN-LAST:event_CampoContraseñaKeyTyped
 
     private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
 
     }//GEN-LAST:event_formKeyTyped
 
-    private void CampoUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoUsuarioKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            iniciarSesion();
-        }
-        
-        /*if(CampoUsuario.getText().length()<8){
-            CampoUsuario.setBackground(Color.red);
-        }else{
-            CampoUsuario.setBackground(Color.WHITE);
-        }*/
-    }//GEN-LAST:event_CampoUsuarioKeyPressed
-
-    private void CampoContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoContraseñaKeyPressed
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            iniciarSesion();
-        }
-    }//GEN-LAST:event_CampoContraseñaKeyPressed
-
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         this.dispose();
     }//GEN-LAST:event_botonSalirActionPerformed
-    
+
+    private void Text_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_PasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_PasswordActionPerformed
+
+    private void Text_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_userActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Text_userActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -399,28 +359,27 @@ public class IniciarSesion extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new IniciarSesion().setVisible(true);
             }
         });
-        
+
         //Colocarlo en el main principal 
         /*Conexion.Conexion.getConexion();*/
-     
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField CampoContraseña;
-    private javax.swing.JTextField CampoUsuario;
     private javax.swing.JPanel Fondo;
     private javax.swing.JLabel FondoHead;
     private javax.swing.JPanel FondoImagen;
     private javax.swing.JPanel FondoMarca;
     private javax.swing.JLabel Imagen;
     private javax.swing.JPanel IngresoDatos;
+    private javax.swing.JPasswordField Text_Password;
+    private javax.swing.JTextField Text_user;
     private javax.swing.JButton botonIngresar;
     private javax.swing.JButton botonSalir;
     private javax.swing.JLabel etiquetaContraseña;

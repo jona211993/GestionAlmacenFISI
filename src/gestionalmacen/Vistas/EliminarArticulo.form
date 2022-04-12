@@ -49,14 +49,6 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="Head" alignment="0" max="32767" attributes="0"/>
               <Component id="Footer" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Body" max="32767" attributes="0"/>
-                      <Component id="LabelFormularioRegistro" alignment="1" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="BotonVolver" min="-2" max="-2" attributes="0"/>
@@ -64,6 +56,12 @@
                   <Component id="BotonGuardar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
               </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="LabelFormularioRegistro" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Component id="Body" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -136,45 +134,42 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="LabelNombreArticulo1" max="32767" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="LabelArticulo" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="LabelNombreArticulo1" max="32767" attributes="0"/>
+                                  <Component id="LabelFechaRegistro" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="LabelNombreArticulo" alignment="0" pref="144" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="LabelCantidad" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="LabelFechaRegistro" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="LabelNombreArticulo" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="LabelCantidad" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="label_codigo" min="-2" pref="113" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="label_nombre" min="-2" pref="234" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="LabelRespuestaCantidad" min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelNombreRespuesta1" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <Component id="LaberDia" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="LabelRespuestaDia" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                              <Component id="LabelMes" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                              <Component id="LabelRespuestaMes" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="LabelAño" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="LabelRespuestaAño" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="LabelNombreRespuesta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="label_cantidad" min="-2" max="-2" attributes="0"/>
+                                          <Component id="label_fecha" min="-2" pref="122" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="LabelArticulo" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -183,32 +178,27 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                       <Component id="LabelArticulo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="LabelNombreArticulo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LabelNombreRespuesta" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LabelNombreArticulo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_codigo" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="LabelNombreArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LabelNombreRespuesta1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="LabelCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LabelRespuestaCantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="LabelFechaRegistro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LaberDia" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LabelMes" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LabelAño" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LabelRespuestaDia" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LabelRespuestaMes" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LabelRespuestaAño" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_fecha" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="43" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -248,59 +238,31 @@
                 <Property name="text" type="java.lang.String" value="Fecha de Registro"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="LaberDia">
+            <Component class="javax.swing.JLabel" name="label_codigo">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="2"/>
+                  <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="D&#xed;a:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="LabelMes">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="2"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Mes:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="LabelA&#xf1;o">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="2"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="A&#xf1;o:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="LabelNombreRespuesta">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="2"/>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="99" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="**************************************************"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="LabelRespuestaCantidad">
+            <Component class="javax.swing.JLabel" name="label_cantidad">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="18" style="3"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="XXXXX"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="LabelRespuestaDia">
+            <Component class="javax.swing.JLabel" name="label_fecha">
               <Properties>
-                <Property name="text" type="java.lang.String" value="XX"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="LabelRespuestaMes">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="XX"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="LabelRespuestaA&#xf1;o">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="XXXX"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="18" style="3"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="xxxxxxx"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="LabelNombreArticulo1">
@@ -311,10 +273,10 @@
                 <Property name="text" type="java.lang.String" value="C&#xf3;digo de Art&#xed;culo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="LabelNombreRespuesta1">
+            <Component class="javax.swing.JLabel" name="label_nombre">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="2"/>
+                  <Font name="Segoe UI" size="18" style="3"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="**************************************************"/>
               </Properties>
@@ -350,7 +312,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="FORMULARIO DE REGISTRO"/>
+            <Property name="text" type="java.lang.String" value="SE ELIMINAR&#xc1; EL SIGUIENTE ARTICULO"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="BotonGuardar">

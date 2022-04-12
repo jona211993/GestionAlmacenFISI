@@ -248,7 +248,7 @@ public class RegistrarArticulo extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 543));
+        getContentPane().add(Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 560));
 
         pack();
         setLocationRelativeTo(null);

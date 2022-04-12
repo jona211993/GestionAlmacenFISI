@@ -16,8 +16,8 @@ public class GestorEliminarArticulo {
             pstm = con.prepareStatement(sql);
             pstm.setInt(1, art.getCodigo());
             int filas = pstm.executeUpdate();
-            pstm.close();
             mensaje = "FILAS PROCESADAS : " + filas;
+            pstm.close();
 
         } catch (Exception e) {
             mensaje = " NO SE PUDO ELIMINAR CORRECTAMENTE \n " + e.getMessage();

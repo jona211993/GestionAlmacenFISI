@@ -208,12 +208,16 @@ public class BuscarArticulo extends javax.swing.JFrame {
         boolean Encontrado = false;
         ArticuloCN objeto_AN = new ArticuloCN();
         Articulo articulo = new Articulo();
-        int code;
+        int code = 0;
         if (CampoCodigoArticulo.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "INGRESE UN CODIGO VALIDO");
+            JOptionPane.showMessageDialog(null, "INGRESE UN CODIGO VALIDO");
         } else {
-            code = Integer.parseInt(CampoCodigoArticulo.getText());
-            articulo.setCodigo(code);
+            try {
+                code = Integer.parseInt(CampoCodigoArticulo.getText());
+                articulo.setCodigo(code);
+            } catch (Exception e) {
+            }
+
             //si lo encuentra:
             Encontrado = objeto_AN.SolicitarBuscarCodigoArticulo(articulo);
 
@@ -231,7 +235,7 @@ public class BuscarArticulo extends javax.swing.JFrame {
                 }
 
             } else {
-                JOptionPane.showMessageDialog(null, "ARTICULO NO ENCONTRADO");
+                JOptionPane.showMessageDialog(null, "INGRESE UN CODIGO VALIDO");
 
             }
         }
